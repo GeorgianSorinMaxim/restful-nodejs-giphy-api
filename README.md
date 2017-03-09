@@ -67,20 +67,16 @@ This API should query the giphy API for any provided query string. This data sho
 
 
 ## See below the steps on how to test the API using Postman: 	
-	1. Install Postman in Google Chrome  (https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+	- Install Postman in Google Chrome  (https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
-	2. Go to the project folder and start the app using:
+	- Go to the project folder and start the app using:
     `cd YOUR_FOLDER_PATH`
     `DATABASE_URL={YOUR_POSTGRES_DATABASE_URL} npm run migrations`
 
-  3. For testing the giphenate, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
-    Run the request, the gif URL will be returned. If the query string is new, the gif will be inserted and its url returned, otherwise the already inserted gif url will be returned.
+  - For testing the giphenate, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE. Run the request, the gif URL will be returned. If the query string is new, the gif will be inserted and its url returned, otherwise the already inserted gif url will be returned.
 
-  4. For deleting a gif, use the DELETE request on the following url: http://localhost:3000/YOUR-TEXT-HERE
-    Run the request, the gif will be deleted if existent.
+  - For deleting a gif, use the DELETE request on the following url: http://localhost:3000/YOUR-TEXT-HERE. Run the request, the gif will be deleted if existent.
 
-	5. For getting the url of a gif saved in the Db using the query text, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
-  Run the request, a the gif will be returned if existent.
+  - For getting the url of a gif saved in the Db using the query text, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE. Run the request, a the gif will be returned if existent.
 
-  6. For inserting a new gif in the Db using the query text, use the POST request on the following url: http://localhost:3000/YOUR-TEXT-HERE
-  Run the request, a the gif will be inserted if not existent.
+  - For inserting a new gif in the Db using the query text, use the POST request on the following url: http://localhost:3000/YOUR-TEXT-HERE. Run the request, a the gif will be inserted if not existent.
