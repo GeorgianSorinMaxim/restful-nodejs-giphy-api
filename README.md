@@ -34,8 +34,10 @@
 This API should query the giphy API for any provided query string. This data should be cached on a PostgreSQL database using the provided migrations and schemas.
 
  - The `./lib/handlers/giphinate.js` handler calls the giphy API and return the first GIF URL in the response. The data is cached in the PostgreSQL database so the next time the same query is used, the GIF URL is returned from the database instead of the Giphy API.
- - Create a new `DELETE` route and controller which deletes the record associated with the query text sent up.
- - Create a set of tests for each endpoint.
+ - A `DELETE` route and controller deletes the record associated with the query text sent up.
+ - A `INSERT` route and controller inserts a new record if the query is new.
+ - A `GET` route and controller returns the gif url if the query is existent.
+ - A set of tests for each endpoint have been included in the ./lib/tests/unit.js.
 
 ### Implementation details:
 - I have used ElephantSQL as the Postgres instance. The Db url is:
@@ -71,14 +73,14 @@ This API should query the giphy API for any provided query string. This data sho
     `cd YOUR_FOLDER_PATH`
     `DATABASE_URL={YOUR_POSTGRES_DATABASE_URL} npm run migrations`
 
-  2. For testing the giphenate, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
+  3. For testing the giphenate, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
     Run the request, the gif URL will be returned. If the query string is new, the gif will be inserted and its url returned, otherwise the already inserted gif url will be returned.
 
-  3. For deleting a gif, use the DELETE request on the following url: http://localhost:3000/YOUR-TEXT-HERE
+  4. For deleting a gif, use the DELETE request on the following url: http://localhost:3000/YOUR-TEXT-HERE
     Run the request, the gif will be deleted if existent.
 
-	4. For getting the url of a gif saved in the Db using the query text, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
+	5. For getting the url of a gif saved in the Db using the query text, use the GET request on the following url: http://localhost:3000/YOUR-TEXT-HERE
   Run the request, a the gif will be returned if existent.
 
-  5. For inserting a new gif in the Db using the query text, use the POST request on the following url: http://localhost:3000/YOUR-TEXT-HERE
+  6. For inserting a new gif in the Db using the query text, use the POST request on the following url: http://localhost:3000/YOUR-TEXT-HERE
   Run the request, a the gif will be inserted if not existent.
